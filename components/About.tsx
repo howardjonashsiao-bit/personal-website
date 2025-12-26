@@ -98,7 +98,7 @@ const About: React.FC = () => {
             <div className="relative overflow-hidden rounded-lg grayscale hover:grayscale-0 transition-all duration-500">
                {/* Using a professional male placeholder */}
                <img 
-                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" 
+                 src="../assets/about-me.png" 
                  alt="Howard Hsiao" 
                  className="w-full h-[500px] object-cover"
                />
@@ -151,7 +151,7 @@ const About: React.FC = () => {
                  {/* Image Area */}
                  <div className="h-[40vh] md:h-[55%] relative overflow-hidden group">
                     <img 
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" 
+                      src="../assets/more-about-me.png" 
                       alt="Howard Profile" 
                       className="w-full h-full object-cover grayscale contrast-125 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
                     />

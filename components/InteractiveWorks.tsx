@@ -275,10 +275,10 @@ const InteractiveWorks: React.FC<InteractiveWorksProps> = ({ onBack, onVellaClic
               number="03"
               title="Yunnan Explorer:"
               subtitle="Seamless Travel in Yunnan"
-              description="Everything you need at your fingertips. Why is accounting so hard? Because managing personal finances is not just about numbers."
+              description="A high-fidelity landing page for AudioCat, a UI/UX case study focused on a youth-centric audiobook and social dubbing application. The site features interactive data visualization, detailed user personas, and animated user flows to showcase the product's design journey."
               theme="blue"
               image="https://images.unsplash.com/photo-1527684651001-7058d4646792?q=80&w=1000&auto=format&fit=crop"
-              buttonText="Digitize Now"
+              buttonText="Learn more"
             />
         </div>
 
@@ -332,7 +332,7 @@ const InteractiveWorks: React.FC<InteractiveWorksProps> = ({ onBack, onVellaClic
               theme="blue"
               align="right"
               image="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1000&auto=format&fit=crop"
-              buttonText="View Demo"
+              buttonText="Still Making..."
             />
         </div>
 
@@ -345,7 +345,7 @@ const InteractiveWorks: React.FC<InteractiveWorksProps> = ({ onBack, onVellaClic
               description="Designed on Unity. A playful 2D platformer bringing joy and challenge."
               theme="pink"
               image="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop"
-              buttonText="Play Now"
+              buttonText="Still Making..."
             />
         </div>
 
@@ -359,6 +359,7 @@ const InteractiveWorks: React.FC<InteractiveWorksProps> = ({ onBack, onVellaClic
               theme="blue"
               align="right"
               image="https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1000&auto=format&fit=crop"
+              buttonText="Still Making..."
             />
         </div>
 
