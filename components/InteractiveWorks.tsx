@@ -250,7 +250,7 @@ const InteractiveWorks: React.FC<InteractiveWorksProps> = ({ onBack, onVellaClic
               subtitle="Research-Driven Service Design"
               description="Role: UX Research & Interaction Design. Addressing the pain points of 'Maintaining fragrance while out' for urban users."
               theme="pink"
-              image="https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?q=80&w=1000&auto=format&fit=crop"
+              image="https://guard-file-1328304084.cos.ap-beijing.myqcloud.com/file/public/product/vellamain%201.png"
               onClick={onVellaClick}
             />
         </div>
@@ -264,7 +264,7 @@ const InteractiveWorks: React.FC<InteractiveWorksProps> = ({ onBack, onVellaClic
               description="Responsible for UI/UX Design. A comprehensive health tracking ecosystem that adapts to your lifestyle."
               theme="dark"
               align="right"
-              image="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop"
+              image="https://guard-file-1328304084.cos.ap-beijing.myqcloud.com/file/public/product/Howard%202130031083%202.png"
               buttonText="Start Now"
             />
         </div>
@@ -277,7 +277,7 @@ const InteractiveWorks: React.FC<InteractiveWorksProps> = ({ onBack, onVellaClic
               subtitle="Seamless Travel in Yunnan"
               description="A high-fidelity landing page for AudioCat, a UI/UX case study focused on a youth-centric audiobook and social dubbing application. The site features interactive data visualization, detailed user personas, and animated user flows to showcase the product's design journey."
               theme="blue"
-              image="https://images.unsplash.com/photo-1527684651001-7058d4646792?q=80&w=1000&auto=format&fit=crop"
+              image="https://guard-file-1328304084.cos.ap-beijing.myqcloud.com/file/public/product/yunnan%201.png"
               buttonText="Learn more"
             />
         </div>
@@ -291,7 +291,7 @@ const InteractiveWorks: React.FC<InteractiveWorksProps> = ({ onBack, onVellaClic
               description="An immersive audiobook experience designed for deep engagement and storytelling enhancement."
               theme="yellow"
               align="right"
-              image="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=1000&auto=format&fit=crop"
+              image="https://guard-file-1328304084.cos.ap-beijing.myqcloud.com/file/public/product/image%201.png"
               buttonText="Listen Now"
             />
         </div>
@@ -464,10 +464,10 @@ const InteractiveWorks: React.FC<InteractiveWorksProps> = ({ onBack, onVellaClic
              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-red-900/20 to-transparent opacity-50 group-hover:scale-110 transition-transform duration-1000"></div>
           </div>
           
-          <div className="mt-16 text-center md:text-left">
+          {/* <div className="mt-16 text-center md:text-left">
             <h4 className="text-gray-500 uppercase tracking-widest">About Us</h4>
             <p className="text-[15vw] font-['Syne'] font-bold leading-none text-[#220a0a] select-none opacity-50 transform translate-y-4">04</p>
-          </div>
+          </div> */}
 
         </div>
       </section>

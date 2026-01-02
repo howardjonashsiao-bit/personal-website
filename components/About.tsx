@@ -8,11 +8,11 @@ const About: React.FC = () => {
 
   // Lock body scroll when modal is open
   useEffect(() => {
-    if (showMoreAbout) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+   //  if (showMoreAbout) {
+   //    document.body.style.overflow = 'hidden';
+   //  } else {
+   //    document.body.style.overflow = 'unset';
+   //  }
     // Cleanup function to ensure scroll is restored if component unmounts
     return () => {
       document.body.style.overflow = 'unset';
@@ -98,7 +98,7 @@ const About: React.FC = () => {
             <div className="relative overflow-hidden rounded-lg grayscale hover:grayscale-0 transition-all duration-500">
                {/* Using a professional male placeholder */}
                <img 
-                 src="../assets/about-me.png" 
+                 src="https://guard-file-1328304084.cos.ap-beijing.myqcloud.com/crmebimage/public/maintain/2026/01/01/a06e5d7cf0f841b0b36250c9c6ca912btduzj8e0sy.png" 
                  alt="Howard Hsiao" 
                  className="w-full h-[500px] object-cover"
                />
@@ -151,7 +151,7 @@ const About: React.FC = () => {
                  {/* Image Area */}
                  <div className="h-[40vh] md:h-[55%] relative overflow-hidden group">
                     <img 
-                      src="../assets/more-about-me.png" 
+                      src="https://guard-file-1328304084.cos.ap-beijing.myqcloud.com/crmebimage/public/maintain/2026/01/01/378a8d00f1d04c90b9a1d885c99597fc3tjm0qanz4.png" 
                       alt="Howard Profile" 
                       className="w-full h-full object-cover grayscale contrast-125 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
                     />

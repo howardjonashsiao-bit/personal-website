@@ -158,7 +158,7 @@ const InternshipProjects: React.FC<InternshipProjectsProps> = ({ onBack }) => {
   const graphicWorks = [
     {
       // 1. Gym / Pink
-      src: "https://images.unsplash.com/photo-1574680096145-63a0a0041a43?q=80&w=1000&auto=format&fit=crop", 
+      src: "https://guard-file-1328304084.cos.ap-beijing.myqcloud.com/file/public/product/1.jpg", 
       title: "強強聯手",
       subtitle: "福利回饋",
       description: "餓了麼平台 快樂食間",
@@ -166,7 +166,7 @@ const InternshipProjects: React.FC<InternshipProjectsProps> = ({ onBack }) => {
     },
     {
       // 2. Red / Festival
-      src: "https://images.unsplash.com/photo-1512350546255-a040b2a3a0c5?q=80&w=1000&auto=format&fit=crop", 
+      src: "https://guard-file-1328304084.cos.ap-beijing.myqcloud.com/file/public/product/2.jpg", 
       title: "雙旦狂歡喜訊",
       subtitle: "限時優惠",
       description: "節日特別活動視覺設計",
@@ -174,7 +174,7 @@ const InternshipProjects: React.FC<InternshipProjectsProps> = ({ onBack }) => {
     },
     {
       // 3. Blue / Happy Dining
-      src: "https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=1000&auto=format&fit=crop",
+      src: "https://guard-file-1328304084.cos.ap-beijing.myqcloud.com/file/public/product/3.jpg",
       title: "快樂放心點",
       subtitle: "食間準時達",
       description: "招牌商品無條件減",
@@ -182,7 +182,7 @@ const InternshipProjects: React.FC<InternshipProjectsProps> = ({ onBack }) => {
     },
     {
       // 4. Dark / Laptop
-      src: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop",
+      src: "https://guard-file-1328304084.cos.ap-beijing.myqcloud.com/file/public/product/4.jpg",
       title: "UI喜校園",
       subtitle: "正式入駐",
       description: "UIC一&二期校園推廣",
@@ -190,7 +190,7 @@ const InternshipProjects: React.FC<InternshipProjectsProps> = ({ onBack }) => {
     },
     {
       // 5. Christmas Vertical Poster
-      src: "https://images.unsplash.com/photo-1543258103-a62bdc069871?q=80&w=1000&auto=format&fit=crop",
+      src: "https://guard-file-1328304084.cos.ap-beijing.myqcloud.com/file/public/product/5.jpg",
       title: "雙旦福利回饋",
       subtitle: "節日海報",
       description: "強強聯手回饋福利 5元優惠",
@@ -198,7 +198,7 @@ const InternshipProjects: React.FC<InternshipProjectsProps> = ({ onBack }) => {
     },
     {
       // 6. Blue Mascot Vertical
-      src: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=1000&auto=format&fit=crop",
+      src: "https://guard-file-1328304084.cos.ap-beijing.myqcloud.com/file/public/product/6.jpg",
       title: "食間準時達",
       subtitle: "品牌吉祥物",
       description: "IP形象結合配送服務推廣",
@@ -206,7 +206,7 @@ const InternshipProjects: React.FC<InternshipProjectsProps> = ({ onBack }) => {
     },
     {
       // 7. Standee (Physical)
-      src: "https://images.unsplash.com/photo-1588534609756-34746f332039?q=80&w=1000&auto=format&fit=crop",
+      src: "https://guard-file-1328304084.cos.ap-beijing.myqcloud.com/file/public/product/7.jpg",
       title: "線下易拉寶",
       subtitle: "校園推廣",
       description: "實體活動物料展示 A版",
@@ -214,7 +214,7 @@ const InternshipProjects: React.FC<InternshipProjectsProps> = ({ onBack }) => {
     },
     {
       // 8. Hallway Photo
-      src: "https://images.unsplash.com/photo-1563986768427-1b0767594191?q=80&w=1000&auto=format&fit=crop",
+      src: "https://guard-file-1328304084.cos.ap-beijing.myqcloud.com/file/public/product/8.jpeg",
       title: "活動現場展示",
       subtitle: "實景應用",
       description: "餐廳現場宣傳物料佈置",
@@ -222,7 +222,7 @@ const InternshipProjects: React.FC<InternshipProjectsProps> = ({ onBack }) => {
     },
     {
       // 9. UI Icons Grid
-      src: "https://images.unsplash.com/photo-1626785774573-4b799312c95d?q=80&w=1000&auto=format&fit=crop",
+      src: "https://guard-file-1328304084.cos.ap-beijing.myqcloud.com/file/public/product/9.jpeg",
       title: "Iconography",
       subtitle: "圖標系統",
       description: "食品品類圖標與UI資產設計",
@@ -301,14 +301,14 @@ const InternshipProjects: React.FC<InternshipProjectsProps> = ({ onBack }) => {
             {/* Laptop Showcase */}
             <div className="mt-12 bg-slate-100 rounded-[3rem] p-8 md:p-20 overflow-hidden relative group">
                 <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-50"></div>
-                <LaptopMockup image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop" />
+                <LaptopMockup image="https://guard-file-1328304084.cos.ap-beijing.myqcloud.com/file/public/product/%E7%94%BB%E6%9D%BF%E5%A4%87%E4%BB%BD%202.png" />
                 <div className="text-center mt-12 relative z-10">
-                    <button 
+                    <a href="https://www.figma.com/design/gWxIM24PtXO6UDDO1wu2Uj/b%E7%AB%AF?node-id=0-1&t=1zg9ox9eAOYzr8aj-1" target="_blank"
                      className="inline-flex items-center gap-2 px-8 py-3 bg-black text-white rounded-full font-bold uppercase tracking-widest text-xs hover:bg-blue-600 transition-all hover:scale-105 shadow-xl group/btn"
                    >
                      View Prototype in Figma
                      <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                   </button>
+                   </a>
                 </div>
             </div>
          </div>

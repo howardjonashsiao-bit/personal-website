@@ -76,7 +76,9 @@ const Projects: React.FC<ProjectsProps> = ({ onInteractiveClick, onThreeDClick, 
            <div className="md:col-span-1 md:row-span-1 relative group cursor-pointer">
             <div className="w-full h-full bg-[#888] rounded-[2rem] flex items-center justify-center p-6 text-white overflow-hidden">
                <img src="https://picsum.photos/400/400?random=2" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" alt="2D Works"/>
-               <h3 className="text-xl font-['Syne'] relative z-10 font-medium">2D Works</h3>
+               <h3 className="text-xl font-['Syne'] relative z-10 font-medium">2D Works <br/>
+                 <span className="text-xs font-normal opacity-70">Still Processing</span>
+               </h3>
             </div>
           </div>
 
@@ -92,7 +94,35 @@ const Projects: React.FC<ProjectsProps> = ({ onInteractiveClick, onThreeDClick, 
                         <rect width="100%" height="100%" fill="url(#lines)"/>
                     </svg>
                 </div>
-                <h3 className="text-2xl font-['Syne'] relative z-10">Other Works</h3>
+                <h3 className="text-2xl font-['Syne'] relative z-10">bodysync</h3>
+             </div>
+          </div>
+          <div className="md:col-span-2 md:row-span-1 relative group cursor-pointer">
+             <div className="w-full h-full bg-[#aaa] rounded-[2rem] flex items-center justify-center p-6 text-[#333] overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center opacity-10">
+                    {/* Abstract Lines */}
+                    <svg width="100%" height="100%">
+                        <pattern id="lines" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                            <line x1="0" y1="0" x2="20" y2="20" stroke="black" strokeWidth="1"/>
+                        </pattern>
+                        <rect width="100%" height="100%" fill="url(#lines)"/>
+                    </svg>
+                </div>
+                <h3 className="text-2xl font-['Syne'] relative z-10">yunnan-explorer</h3>
+             </div>
+          </div>
+          <div className="md:col-span-2 md:row-span-1 relative group cursor-pointer">
+             <div className="w-full h-full bg-[#aaa] rounded-[2rem] flex items-center justify-center p-6 text-[#333] overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center opacity-10">
+                    {/* Abstract Lines */}
+                    <svg width="100%" height="100%">
+                        <pattern id="lines" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                            <line x1="0" y1="0" x2="20" y2="20" stroke="black" strokeWidth="1"/>
+                        </pattern>
+                        <rect width="100%" height="100%" fill="url(#lines)"/>
+                    </svg>
+                </div>
+                <h3 className="text-2xl font-['Syne'] relative z-10">audiocat</h3>
              </div>
           </div>
 

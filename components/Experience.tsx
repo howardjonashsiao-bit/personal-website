@@ -2,6 +2,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { EXPERIENCES } from '../constants';
 import { Experience as ExperienceType } from '../types';
+import { X, Maximize2, ZoomIn } from 'lucide-react';
 
 // Interactive Title Component
 const TrajectoryTitle = () => {
@@ -32,12 +33,9 @@ const TrajectoryTitle = () => {
           if (char === " ") return <span key={index} className="w-4 md:w-8" />;
 
           // Calculate distance from mouse to this letter
-          // We approximate letter width to be about 60px (responsive) for calculation
           const letterCenterX = index * 60 + 30; 
           const distance = Math.abs(mousePos.x - letterCenterX);
           
-          // Interaction Intensity (0 to 1) based on distance
-          // Range is 200px. Closer = Higher intensity
           const proximity = isHovering ? Math.max(0, 1 - distance / 250) : 0;
           
           const translateY = proximity * -40; // Jump up 40px
@@ -61,13 +59,12 @@ const TrajectoryTitle = () => {
         })}
       </div>
       
-      {/* Decorative Line beneath */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-purple-500/50 rounded-full blur-[2px]"></div>
     </div>
   );
 };
 
-const ExperienceCard: React.FC<{ exp: ExperienceType }> = ({ exp }) => {
+const ExperienceCard: React.FC<{ exp: ExperienceType; onImageClick: (url: string) => void }> = ({ exp, onImageClick }) => {
   const getBorderColor = (type: string) => {
     switch (type) {
       case 'Professional': return 'group-hover:border-red-500/50';
@@ -87,22 +84,65 @@ const ExperienceCard: React.FC<{ exp: ExperienceType }> = ({ exp }) => {
   };
 
   return (
-    <div className={`group relative p-8 bg-[#1a0505] border border-white/10 ${getBorderColor(exp.type)} rounded-3xl transition-all duration-300 hover:transform hover:-translate-y-2 h-full flex flex-col`}>
-      <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-100 transition-opacity">
-        <div className={`w-3 h-3 rounded-full ${getDotColor(exp.type)}`}></div>
+    <div className="group h-[350px] [perspective:1000px] relative">
+      {/* Flipping Container */}
+      <div className="relative h-full w-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] cursor-pointer">
+        
+        {/* FRONT SIDE */}
+        <div className={`absolute inset-0 [backface-visibility:hidden] p-8 bg-[#1a0505] border border-white/10 ${getBorderColor(exp.type)} rounded-3xl transition-all duration-300 h-full flex flex-col`}>
+          <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-100 transition-opacity">
+            <div className={`w-3 h-3 rounded-full ${getDotColor(exp.type)}`}></div>
+          </div>
+          <span className="text-gray-500 text-xs tracking-widest uppercase mb-3 block opacity-60">{exp.type}</span>
+          <h3 className="text-xl md:text-2xl font-['Syne'] font-bold text-white mb-2 leading-tight">{exp.role}</h3>
+          <h4 className="text-base md:text-lg text-gray-400 mb-4 font-medium">{exp.company}</h4>
+          <p className="text-xs md:text-sm text-gray-500 mb-6 font-mono border-l-2 border-gray-700 pl-3">{exp.period}</p>
+          <p className="text-gray-300 font-light leading-relaxed text-sm md:text-base mt-auto line-clamp-4">
+            {exp.description}
+          </p>
+          
+          {/* Flip Hint */}
+          <div className="mt-4 flex items-center gap-2 text-[10px] text-gray-600 uppercase tracking-widest group-hover:text-white transition-colors">
+             <div className="w-4 h-[1px] bg-current"></div>
+             <span>Hover to view visual</span>
+          </div>
+        </div>
+
+        {/* BACK SIDE (Image) */}
+        <div 
+          onClick={() => exp.imageUrl && onImageClick(exp.imageUrl)}
+          className="absolute inset-0 h-full w-full rounded-3xl [transform:rotateY(180deg)] [backface-visibility:hidden] overflow-hidden bg-black border border-white/20"
+        >
+          {exp.imageUrl ? (
+            <>
+              <img 
+                src={exp.imageUrl} 
+                alt={exp.company} 
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 brightness-75 group-hover:brightness-100"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
+                 <h4 className="text-white font-bold font-['Syne'] text-lg">{exp.company}</h4>
+                 <p className="text-gray-400 text-xs uppercase tracking-widest">Click to Expand Preview</p>
+                 <div className="absolute top-4 right-4 p-2 bg-white/10 rounded-full backdrop-blur-md border border-white/20 text-white">
+                    <ZoomIn size={16} />
+                 </div>
+              </div>
+            </>
+          ) : (
+            <div className="w-full h-full flex items-center justify-center bg-gray-900 text-gray-600 font-mono text-xs uppercase tracking-tighter">
+               No image available
+            </div>
+          )}
+        </div>
+
       </div>
-      <span className="text-gray-500 text-xs tracking-widest uppercase mb-3 block opacity-60">{exp.type}</span>
-      <h3 className="text-xl md:text-2xl font-['Syne'] font-bold text-white mb-2 leading-tight">{exp.role}</h3>
-      <h4 className="text-base md:text-lg text-gray-400 mb-4 font-medium">{exp.company}</h4>
-      <p className="text-xs md:text-sm text-gray-500 mb-6 font-mono border-l-2 border-gray-700 pl-3">{exp.period}</p>
-      <p className="text-gray-300 font-light leading-relaxed text-sm md:text-base mt-auto">
-        {exp.description}
-      </p>
     </div>
   );
 };
 
 const Experience: React.FC = () => {
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
+
   // Group experiences
   const professional = EXPERIENCES.filter(e => e.type === 'Professional');
   const competition = EXPERIENCES.filter(e => e.type === 'Competition');
@@ -118,9 +158,13 @@ const Experience: React.FC = () => {
         </h3>
         <div className="flex-1 h-px bg-white/10"></div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {items.map((exp) => (
-          <ExperienceCard key={exp.id} exp={exp} />
+          <ExperienceCard 
+            key={exp.id} 
+            exp={exp} 
+            onImageClick={(url) => setPreviewImage(url)} 
+          />
         ))}
       </div>
     </div>
@@ -136,7 +180,6 @@ const Experience: React.FC = () => {
           Experiences
         </h2>
         
-        {/* Replaced static header with Interactive Trajectory Title */}
         <TrajectoryTitle />
 
         <div className="space-y-12">
@@ -146,6 +189,35 @@ const Experience: React.FC = () => {
           {renderSection('Volunteer & Certifications', volunteer)}
         </div>
       </div>
+
+      {/* Fullscreen Preview Modal */}
+      {previewImage && (
+        <div 
+          className="fixed inset-0 z-[200] flex items-center justify-center bg-black/95 backdrop-blur-2xl p-4 md:p-12 animate-in fade-in duration-300"
+          onClick={() => setPreviewImage(null)}
+        >
+           <button 
+             onClick={() => setPreviewImage(null)}
+             className="absolute top-8 right-8 z-[210] p-3 bg-white/10 hover:bg-white text-white hover:text-black rounded-full border border-white/20 transition-all group"
+           >
+              <X size={24} className="group-hover:rotate-90 transition-transform" />
+           </button>
+
+           <div 
+             className="relative max-w-5xl w-full h-full flex items-center justify-center animate-in zoom-in-95 duration-500"
+             onClick={e => e.stopPropagation()}
+           >
+              <img 
+                src={previewImage} 
+                alt="Experience Preview" 
+                className="max-h-full max-w-full object-contain rounded-2xl shadow-2xl border border-white/10"
+              />
+              <div className="absolute bottom-[-40px] left-0 right-0 text-center">
+                 <p className="text-gray-400 font-mono text-xs uppercase tracking-widest">Experience Artifact Preview</p>
+              </div>
+           </div>
+        </div>
+      )}
     </section>
   );
 };

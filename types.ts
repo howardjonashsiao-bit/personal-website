@@ -16,6 +16,7 @@ export interface Experience {
   period: string;
   description: string;
   type: 'Professional' | 'Competition' | 'Leadership' | 'Volunteer' | 'Certification';
+  imageUrl?: string;
 }
 
 export interface ChatMessage {

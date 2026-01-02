@@ -97,7 +97,7 @@ const Contact: React.FC = () => {
           {/* RIGHT: CV Download */}
           <div id="cv-section" className="flex justify-center md:justify-end order-3 md:order-3 pt-2">
              <a 
-               href="/resume.pdf" // Placeholder link
+               href="https://guard-file-1328304084.cos.ap-beijing.myqcloud.com/file/public/product/%E6%AA%94%E6%A1%88%EF%BC%88CV%EF%BC%89.docx" // Placeholder link
                download 
                className="flex items-center gap-3 px-8 py-3 bg-white/10 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all duration-300 group"
              >

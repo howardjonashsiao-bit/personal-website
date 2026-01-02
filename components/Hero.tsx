@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen w-full flex items-center bg-[#f2f2f2] overflow-hidden perspective-2000">
+    <section className="relative min-h-screen w-full flex items-center overflow-hidden perspective-2000">
       
       {/* --- SVG FILTER FOR REALISTIC RIPPLE EFFECT --- */}
       <svg className="hidden">
@@ -33,7 +33,10 @@ const Hero: React.FC = () => {
 
       {/* --- BACKGROUND LAYERS (Minimalist) --- */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-         <div className="absolute inset-0 bg-[#f2f2f2]"></div>
+         <div className="absolute inset-0 bg-[url('https://guard-file-1328304084.cos.ap-beijing.myqcloud.com/crmebimage/public/maintain/2026/01/01/418aeca1a214420399c5938df10e5cfd670omyjyzh.png')]"  style={{ 
+                 'background-repeat':'no-repeat',
+                 'background-size': '100% 100%' 
+               }}></div>
 
          {/* Very subtle noise texture for paper feel */}
          <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/noise-lines.png')]"></div>
